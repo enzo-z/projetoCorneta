@@ -9,6 +9,7 @@ CREATE TABLE time(
 CREATE TABLE usuario(
     user_id INT UNSIGNED NOT NULL AUTO_INCREMENT,
     login VARCHAR(20) NOT NULL, 
+    password VARCHAR(20) NOT NULL,
     nome VARCHAR(20) NOT NULL,
     sobrenome VARCHAR(40) NOT NULL,
     idade INT UNSIGNED NOT NULL,
