@@ -5,10 +5,10 @@
     </head>
     <body>
         <form action="POST" id="cadastro">
-            Nome<input type="text" name="">
-            Sobrenome<input type="text" name="">
+            Nome<input type="text" name="nome">
+            Sobrenome<input type="text" name="sobrenome">
             <br>
-            Idade<input type="text" name="">
+            Idade<input type="text" name="idade">
             <br>
             Diga seu sexo:
             <br>
@@ -16,11 +16,9 @@
             Feminino<input type="radio" name="sexo" value="F">
             Anônimo<input type="radio" name="sexo" value="O">
             <br>
-            Login<input type="text" name="Login">
+            Login<input type="text" name="login">
             <br>
             Senha<input type="password" name="password">
-
-        
         </form>
 
         <!--<script src="js/cadastro.js"></script>!-->
