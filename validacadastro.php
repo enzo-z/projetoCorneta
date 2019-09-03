@@ -1,9 +1,9 @@
 <?php
     session_start();
-    $createquery = ("INSERT INTO usuario VALUES ");
     $method = $_SERVER['REQUEST_METHOD'];
 
     if($method == 'POST'){
+        //echo "<h1>CHEGOU</h1>";
         $inputedata = [
             'login' => $_POST['nome'],
             'password' => $_POST['password'],
@@ -12,9 +12,15 @@
             'idade' => $_POST['idade'],
             'sexo' => $_POST['sexo'],
             //TIME TESTING
-            'time' => 'Flamengo',
+            'nome_time' => $_POST['nome_time'],
         ];
-        checkData($inputedata);
+
+        if(checkData($inputedata)){
+            require_once("mysqli_connect.php");
+            $createquery = ("INSERT INTO usuario VALUES")
+
+        };
+        
         
     }
 
@@ -22,22 +28,22 @@
 
     function checkData($inputedata){
         $datamissing = array();
-        foreach ($inputedata as $index => $value) {
-            trim($check);
+        foreach ($inputedata as $key => $value) {
+            trim($value);
             if(empty($value)){
-                $datamissing = key($inputedata[$index]);
+                $datamissing[$key] = "$key";
             }
         }
         
-        if(!empty($datamissing)){
-            echo 'You need to enter the following data<br />';
+        if(!empty($datamissing)){ //Adicionar um echo script q dispara uma função de missingdata no JS.
+            //Depois, modificar isso com uma regular expression
+            echo 'You need to enter the following data: <br/>';
             foreach($datamissing as $missing){
 	             echo "$missing<br />";
             }
         }
         else{
-            require_once('mysqli_connect.php');
-
+            return true;
         }
         
 
