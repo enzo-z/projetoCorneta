@@ -20,6 +20,8 @@
             $affectedRows = mysqli_stmt_affected_rows($stmt);
             if($affectedRows == 1){
                 echo '<h1>USUÁRIO CRIADO COM SUCESSO!</h1>';
+                include_once("update_torcida_time.php");
+                aumentaTorcida($inputeData['nome_time']);
                 }
             else{
                 echo "<h1>Error na criação de usuário: </h1>";
