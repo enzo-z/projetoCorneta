@@ -1,10 +1,14 @@
 <?php
-    define('USER', 'bacanudo');
+    /*define('USER', 'bacanudo');
     define('PASSWORD', 'bacaninha');
     define('HOST', 'localhost');
     define('NAMEDB', 'loginrenato');
-    //echo '<h1>Include test</h1>';
-    $dbaseConnection = mysqli_connect(HOST, USER, PASSWORD, NAMEDB);
+    //echo '<h1>Include test</h1>';*/
+    $HOST = 'localhost';
+    $USER = 'bacanudo';
+    $PASSWORD = 'bacaninha';
+    $NAMEDB = 'testandorenato';
+    $dbaseConnection = mysqli_connect($HOST, $USER, $PASSWORD, $NAMEDB);
 
     if(!$dbaseConnection){
         die('Erro de conexão: ' . mysqli_connect_error());
