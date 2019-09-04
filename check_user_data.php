@@ -1,17 +1,17 @@
 <?php
-    function checkData($inputedata) : bool{
-        $datamissing = array();
-        foreach ($inputedata as $key => $value) {
+    function checkData($inputeData) : bool{
+        $dataMissing = array();
+        foreach ($inputeData as $key => $value) {
             trim($value);
             if(empty($value)){
-                $datamissing[$key] = "$key";
+                $dataMissing[$key] = "$key";
             }
         }
         
-        if(!empty($datamissing)){ //Adicionar um echo script q dispara uma função de missingdata no JS.
-            //Depois, modificar isso com uma regular expression
+        if(!empty($dataMissing)){ //Adicionar um echo script q dispara uma função de missingdata no JS.
+            //Depois, modificar isso com uma regular expression, no futuro
             echo 'You need to enter the following data: <br/>';
-            foreach($datamissing as $missing){
+            foreach($dataMissing as $missing){
 	             echo "$missing<br />";
             }
             return false;
@@ -19,6 +19,4 @@
         else{
             return true;
         }
-        
-
     }

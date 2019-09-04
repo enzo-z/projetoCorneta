@@ -4,9 +4,9 @@
     define('HOST', 'localhost');
     define('NAMEDB', 'loginrenato');
     //echo '<h1>Include test</h1>';
-    $dbaseconnection = mysqli_connect(HOST, USER, PASSWORD, NAMEDB);
+    $dbaseConnection = mysqli_connect(HOST, USER, PASSWORD, NAMEDB);
 
-    if(!$dbaseconnection){
+    if(!$dbaseConnection){
         die('Erro de conexão: ' . mysqli_connect_error());
     }
 
