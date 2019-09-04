@@ -3,13 +3,14 @@ function checkUserExist($inputeData) : bool{
     require_once("mysqli_connect.php");
     $loginQuery = "SELECT login FROM usuario";
     $response = mysqli_query($dbaseConnection, $loginQuery);
+    $exist = false;
     if($response){
         while($row = mysqli_fetch_array($response)){
             if ($row['login'] == $inputeData['login']){
-                return true;
+                $exist = true;
             }
             else{
-                return false;
+                $exist = false;
             }
         }
     }
@@ -18,5 +19,13 @@ function checkUserExist($inputeData) : bool{
         echo mysqli_error($dbaseConnection);
     }
     mysqli_close($dbaseConnection);
+
+
+    if ($exist){
+        include_once("cadastro.php");
+        echo '<h1>SEU USUARIO JA EXISTE!</h1>';
+    }
+    return $exist;
+    exit();
 
 }

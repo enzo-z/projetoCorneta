@@ -10,9 +10,10 @@
         
         if(!empty($dataMissing)){ //Adicionar um echo script q dispara uma função de missingdata no JS.
             //Depois, modificar isso com uma regular expression, no futuro
+            include ("cadastro.php");
             echo 'You need to enter the following data: <br/>';
             foreach($dataMissing as $missing){
-	             echo "$missing<br />";
+                 echo "$missing<br />";
             }
             return false;
         }

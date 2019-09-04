@@ -1,7 +1,7 @@
 <?php
     require("check_user_data.php");
     require("check_user_exist.php");
-    require("create_user.php"); 
+    require("create_user.php");
     $method = $_SERVER['REQUEST_METHOD'];
     if($method == 'POST'){
         //echo "<h1>CHEGOU</h1>";
@@ -18,8 +18,8 @@
 
         if(checkData($inputeData) && !checkUserExist($inputeData)) {
             createUser($inputeData);
-
-        };
+        }
+        
         
         
     }
